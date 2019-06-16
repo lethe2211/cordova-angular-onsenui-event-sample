@@ -10,7 +10,9 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {HttpModule} from '@angular/http';
 import {OnsenModule} from 'ngx-onsenui';
 
-import {MyApp} from './app/app';
+import { FirstComponent } from './app/first/first.component';
+import { AppComponent } from './app/app.component';
+import { SecondComponent } from './app/second/second.component';
 
 // Enable production mode when in production mode.
 if (process.env.NODE_ENV === 'production') {
@@ -28,10 +30,17 @@ if (ons.platform.isIPhoneX()) {
         HttpModule,
     ],
     declarations: [
-        MyApp,
+        AppComponent,
+        FirstComponent,
+        SecondComponent
     ],
     bootstrap: [
-        MyApp,
+        AppComponent
+    ],
+    entryComponents: [
+        AppComponent,
+        FirstComponent,
+        SecondComponent
     ],
     schemas: [
         CUSTOM_ELEMENTS_SCHEMA,
