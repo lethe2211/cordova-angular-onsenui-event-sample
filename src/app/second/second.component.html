@@ -1,0 +1,38 @@
+<style>
+  li {
+    font-size: 12px;
+  }
+</style>
+
+<ons-page>
+  <ons-toolbar>
+    <div class="left">
+      <ons-back-button #backButton>
+        Back
+      </ons-back-button>
+    </div>
+    <div class="center">Second Page</div>
+  </ons-toolbar>
+
+  <div class="content">
+    <ons-list>
+      <ons-list-item (click)="onClickCheckCurrentPageStack()">
+        Check Current PageStack
+      </ons-list-item>
+      <ons-list-item (click)="onClickPushSecondPage()">
+        Push Second Page
+      </ons-list-item>
+      <ons-list-item (click)="onClickResetToFirstPage()">
+          Reset To First Page
+      </ons-list-item>
+      <ons-list-item (click)="onClickNotifyRxJSEvent()">
+        Notify RxJS Event
+      </ons-list-item>
+    </ons-list>
+    <ul>
+      <li *ngFor="let elem of logBuffer">
+        {{elem}}
+      </li>
+    </ul>
+  </div>
+</ons-page>
